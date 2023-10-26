@@ -81,23 +81,20 @@
         </tr>
       </thead>
       <tbody>
-        <?php foreach ($hotels as $hotel) {  ?>
+       
+      <?php foreach ($hotels as $hotel) { ?>
 
-          <?php 
-            if($parking){
-              if($hotel['parking']){ ?>
-                <tr class="">
-                  <td> <?php echo $hotel['name'] ?> </td>
-                  <td> <?php echo $hotel['description'] ?> </td>
-                  <td> <?php echo $hotel['parking'] ?> </td>
-                  <td> <?php echo $hotel['vote'] ?> </td>
-                  <td> <?php echo $hotel['distance_to_center'] ?> </td>  
-                </tr>
-              <?php
-              } ?>
-            <?php } ?>
-          
-        <?php } ?>
+        <tr>
+          <?php if (!$parking || ($parking && $hotel['parking'])) {?>
+            <td> <?php echo $hotel['name'] ?> </td>
+            <td> <?php echo $hotel['description'] ?> </td>
+            <td> <?php echo $hotel['parking'] ?> </td>
+            <td> <?php echo $hotel['vote'] ?> </td>
+            <td> <?php echo $hotel['distance_to_center'] ?> </td>  
+          <?php } ?>
+        </tr>
+        
+      <?php } ?>
       
       </tbody>
     </table>
