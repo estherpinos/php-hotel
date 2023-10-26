@@ -40,7 +40,7 @@
 
     ];
 
-    $parking=$_GET['parking'];
+    $parking= isset($_GET['parking']) && $_GET['parking'] == 'on';
 
 
 ?>
